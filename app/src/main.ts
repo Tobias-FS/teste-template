@@ -8,8 +8,8 @@ const app = document.getElementById( 'main' )!;
 // page( '/', () => carregarPagina( '/home.html', 'home' ) );
 // page( '/home', () => carregarPagina( '/home.html', 'home' ) );
 // page( '/login', () => carregarPagina( '/login.html', 'login' ) );
-page( '/users-profile', () => carregarPagina( '/users-profile.html', 'users-profile' ) );
-page( '/cadastro-aluno', () => carregarPagina( '/cadastro-aluno.html', 'cadastro-aluno' ) );
+page( '/users-profile', () => carregarPagina( '/html/users-profile.html', 'users-profile' ) );
+page( '/cadastro-aluno', () => carregarPagina( '/html/cadastro-aluno.html', 'cadastro-aluno' ) );
 page( '*', () => carregarPagina( '/404.html' ) );
 page();
 
