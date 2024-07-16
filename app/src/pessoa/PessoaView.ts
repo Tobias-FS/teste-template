@@ -5,6 +5,7 @@ import { Credenciais } from "./Credenciais";
 import { Estado } from "./Estado";
 import { Cidade } from "./Cidade";
 import { Aluno } from "../aluno/Aluno";
+import { Responsavel } from "../Responsavel/Responsavel";
 
 export class PessoaView {
 
@@ -28,6 +29,58 @@ export class PessoaView {
         const campoBairro = document.getElementById( 'bairro' ) as HTMLInputElement;
         const campoEmail = document.getElementById( 'email' ) as HTMLInputElement;
         const campoSenha = document.getElementById( 'senha' ) as HTMLInputElement;
+        const tipoUsuario = document.getElementById( 'tipoUsuario' ) as HTMLSelectElement;
+
+        if( tipoUsuario.value === "aluno" ){
+            const maioridade = document.getElementById( "maioridade" ) as HTMLSelectElement;
+            if( !maioridade.value ){
+                const campoNomeResponsavel = document.getElementById( 'nomeResponsavel' ) as HTMLInputElement;
+                const campoDataNascimentoResponsavel = document.getElementById( 'dataNascimentoResponsavel' ) as HTMLInputElement;
+                const campoCPFResponsavel = document.getElementById( 'cpfResponsavel' ) as HTMLInputElement;
+                const campoLogradouroResponsavel = document.getElementById( 'logradouroResponsavel' ) as HTMLInputElement;
+                const campoCEPResponsavel = document.getElementById( 'cepResponsavel' ) as HTMLInputElement;
+                const campoComplementoResponsavel = document.getElementById( 'complementoResponsavel' ) as HTMLInputElement;
+                const campoCidadeResponsavel = document.getElementById( 'cidadeResponsavel' ) as HTMLInputElement;
+                const campoEstadoResponsavel = document.getElementById( 'estadoResponsavel' ) as HTMLInputElement;
+                const campoBairroResponsavel = document.getElementById( 'bairroResponsavel' ) as HTMLInputElement;
+                const campoEmailResponsavel = document.getElementById( 'emailResponsavel' ) as HTMLInputElement;
+                const campoSenhaResponsavel = document.getElementById( 'senhaResponsavel' ) as HTMLInputElement;
+
+                const estado = new Estado(
+                    campoEstado.value
+                )
+        
+                const cidade = new Cidade(
+                    campoCidade.value,
+                    estado
+        
+                )
+                
+                const enderecoResponsavel = new Endereco(
+                    campoLogradouro.value,
+                    campoComplemento.value,
+                    campoCEP.value,
+                    campoBairro.value,
+                    cidade
+                )
+        
+                const credenciaisResponsavel = new Credenciais( 
+                    campoEmail.value,
+                    campoSenha.value
+                )
+
+                const responsavel = new Pessoa( 
+                    campoNomeResponsavel.value,
+                    campoDataNascimentoResponsavel.value,
+                    campoEmailResponsavel.value,
+                    campoCPFResponsavel.value,
+                    credenciaisResponsavel,
+                    enderecoResponsavel,
+                    new Responsavel( true )
+                )
+                console.log( responsavel )
+            }
+        }
 
         const estado = new Estado(
             campoEstado.value
@@ -56,6 +109,7 @@ export class PessoaView {
             true
         )
 
+        
         return new Pessoa(
             campoNome.value,
             campoDataNascimento.value,

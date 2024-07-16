@@ -1,115 +1,204 @@
 <div class="pagetitle">
-      <h1>Form Layouts</h1>
-      <nav>
-        <ol class="breadcrumb">
-          <li class="breadcrumb-item"><a href="index.html">Home</a></li>
-          <li class="breadcrumb-item">Forms</li>
-          <li class="breadcrumb-item active">Layouts</li>
-        </ol>
-      </nav>
-    </div><!-- End Page Title -->
-    <section class="section">
-      <div class="row">
+  <h1>Formulario de cadastro</h1>
+  <nav>
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item"><a href="index.html">Home</a></li>
+      <li class="breadcrumb-item">Forms</li>
+      <li class="breadcrumb-item active">Layouts</li>
+    </ol>
+  </nav>
+</div><!-- End Page Title -->
 
-        <div class="col-lg-10">
+<section class="section">
+  <div class="row">
+    <div class="col-lg-10">
+      <div class="card">
+        <div class="card-body">
+          <h5 class="card-title">Dados Pessoa</h5>
 
-          <div class="card">
-            <div class="card-body">
-              <h5 class="card-title">Floating labels Form</h5>
+          <form action="../../src/modules/cadastro-aluno.ts" method="POST" class="row g-3">
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="nome" placeholder="Nome">
+                <label for="nome">Nome</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="dataNascimento" placeholder="Data Nascimento">
+                <label for="dataNascimento">Data de Nascimento</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="cpf" placeholder="CPF">
+                <label for="cpf">CPF</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
+                <label for="logradouro">Logradouro</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="cep" placeholder="CEP">
+                <label for="cep">CEP</label>
+              </div>
+            </div>
+            <div class="col-12">
+              <div class="form-floating">
+                <textarea class="form-control" placeholder="Complemento" id="complemento" style="height: 100px;"></textarea>
+                <label for="complemento">Complemento</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="cidade" placeholder="Cidade">
+                  <label for="cidade">Cidade</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="col-md-12">
+                <div class="form-floating">
+                  <input type="text" class="form-control" id="estado" placeholder="Estado">
+                  <label for="estado">Estado</label>
+                </div>
+              </div>
+            </div>
+            <div class="col-md-12">
+              <div class="form-floating">
+                <input type="text" class="form-control" id="bairro" placeholder="Bairro">
+                <label for="bairro">Bairro</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="email" class="form-control" id="email" placeholder="Email">
+                <label for="email">Email</label>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <div class="form-floating">
+                <input type="password" class="form-control" id="senha" placeholder="Senha">
+                <label for="senha">Senha</label>
+              </div>
+            </div>
 
-              <!-- Floating Labels Form -->
-              <form action="../../src/modules/cadastro-aluno.ts" method="POST" class="row g-3">
+            <div class="col-md-6">
+              <div class="form-floating">
+                <select class="form-select" id="tipoUsuario" name="tipoUsuario" aria-label="Escolha o tipo de usuário" onchange="showFields()">
+                  <option value="professor" selected>Professor</option>
+                  <option value="funcionario">Funcionário</option>
+                  <option value="aluno">Aluno</option>
+                </select>
+                <label for="tipoUsuario">Escolha o tipo de usuário</label>
+              </div>
+            </div>
+
+            <div id="adminFields" class="col-md-6" style="display: block;">
+              <div class="form-floating">
+                <select class="form-select" id="admin" name="admin" aria-label="Administrador">
+                  <option value="true">Sim</option>
+                  <option value="false">Não</option>
+                </select>
+                <label for="admin">Administrador</label>
+              </div>
+            </div>
+
+            <div id="ageFields" class="col-md-6" style="display: none;">
+              <div class="form-floating">
+                <select class="form-select" id="maioridade" name="maioridade" aria-label="Maior de 18 anos" onchange="showFields()">
+                  <option value="true">Sim</option>
+                  <option value="false">Não</option>
+                </select>
+                <label for="maioridade">Maior de 18 anos</label>
+              </div>
+            </div>
+
+            <div id="legalFields" style="display: none;">
+              <h5 class="card-title">Dados Responsável Legal</h5>
+              <div class="row g-3">
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="nome" placeholder="Nome">
-                    <label for="nome">Nome</label>
+                    <input type="text" class="form-control" id="nomeResponsavel" placeholder="Nome">
+                    <label for="nomeResponsavel">Nome</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="dataNascimento" placeholder="Data Nascimento">
-                    <label for="dataNascimento">Data de Nascimento</label>
+                    <input type="text" class="form-control" id="dataNascimentoResponsavel" placeholder="Data Nascimento">
+                    <label for="dataNascimentoResponsavel">Data de Nascimento</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="cpf" placeholder="CPF">
-                    <label for="cpf">CPF</label>
+                    <input type="text" class="form-control" id="cpfResponsavel" placeholder="CPF">
+                    <label for="cpfResponsavel">CPF</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="logradouro" placeholder="Logradouro">
-                    <label for="logradouro">Logradouro</label>
+                    <input type="text" class="form-control" id="logradouroResponsavel" placeholder="Logradouro">
+                    <label for="logradouroResponsavel">Logradouro</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="cep" placeholder="CEP">
-                    <label for="cep">CEP</label>
+                    <input type="text" class="form-control" id="cepResponsavel" placeholder="CEP">
+                    <label for="cepResponsavel">CEP</label>
                   </div>
                 </div>
                 <div class="col-12">
                   <div class="form-floating">
-                    <textarea class="form-control" placeholder="Complemento" id="complemento" style="height: 100px;"></textarea>
-                    <label for="complemento">Complemento</label>
+                    <textarea class="form-control" placeholder="Complemento" id="complementoResponsavel" style="height: 100px;"></textarea>
+                    <label for="complementoResponsavel">Complemento</label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="cidade" placeholder="Cidade">
-                      <label for="cidade">Cidade</label>
-                    </div>
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="cidadeResponsavel" placeholder="Cidade">
+                    <label for="cidadeResponsavel">Cidade</label>
                   </div>
                 </div>
                 <div class="col-md-6">
-                  <div class="col-md-12">
-                    <div class="form-floating">
-                      <input type="text" class="form-control" id="estado" placeholder="Estado">
-                      <label for="estado">Estado</label>
-                    </div>
+                  <div class="form-floating">
+                    <input type="text" class="form-control" id="estadoResponsavel" placeholder="Estado">
+                    <label for="estadoResponsavel">Estado</label>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="bairro" placeholder="Bairro">
-                    <label for="bairro">Bairro</label>
-                  </div>
-                </div>
-                <!-- <div class="col-md-4">
-                  <div class="form-floating mb-3">
-                    <select class="form-select" id="floatingSelect" aria-label="State">
-                      <option selected>New York</option>
-                      <option value="1">Oregon</option>
-                      <option value="2">DC</option>
-                    </select>
-                    <label for="floatingSelect">State</label>
-                  </div>
-                </div> -->
-                <div class="col-md-6">
-                  <div class="form-floating">
-                    <input type="email" class="form-control" id="email" placeholder="Email">
-                    <label for="email">Email</label>
+                    <input type="text" class="form-control" id="bairroResponsavel" placeholder="Bairro">
+                    <label for="bairroResponsavel">Bairro</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="password" class="form-control" id="senha" placeholder="Senha">
-                    <label for="senha">Senha</label>
+                    <input type="email" class="form-control" id="emailResponsavel" placeholder="Email">
+                    <label for="emailResponsavel">Email</label>
                   </div>
                 </div>
-                
-                
-                <div class="text-center">
-                  <button id="botaoCadastrarPessoa" type="submit" class="btn btn-primary">Submit</button>
-                  <button type="reset" class="btn btn-secondary">Reset</button>
+                <div class="col-md-6">
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="senhaResponsavel" placeholder="Senha">
+                    <label for="senhaResponsavel">Senha</label>
+                  </div>
                 </div>
-              </form><!-- End floating Labels Form -->
-
+              </div>
             </div>
-          </div>
+
+            <div class="text-center">
+              <button id="botaoCadastrarPessoa" type="submit" class="btn btn-primary">Submit</button>
+              <button type="reset" class="btn btn-secondary">Reset</button>
+            </div>
+          </form><!-- End floating Labels Form -->
 
         </div>
       </div>
-    </section>
+    </div>
+  </div>
+</section>

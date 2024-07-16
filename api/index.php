@@ -18,23 +18,23 @@ $app->get('/', function (Request $request, Response $response, $args) {
     return $response;
 });
 
-$app->options('/usuario', function (Request $request, Response $response) {
-    $response = $response
-        ->withHeader('Access-Control-Allow-Origin', '*')
-        ->withHeader('Access-Control-Allow-Methods', 'POST')
-        ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
-    return $response;
-});
+// $app->options('/usuario', function (Request $request, Response $response) {
+//     $response = $response
+//         ->withHeader('Access-Control-Allow-Origin', '*')
+//         ->withHeader('Access-Control-Allow-Methods', 'POST')
+//         ->withHeader('Access-Control-Allow-Headers', 'Content-Type, Authorization');
+//     return $response;
+// });
 
-$app->post('/usuario', function (Request $request, Response $response, $args) use( $pdo ) {
-    echo 'oi';
-    $usuarioController = new UsuarioController( $pdo, $request, $response );
+// $app->post('/usuario', function (Request $request, Response $response, $args) use( $pdo ) {
+//     echo 'oi';
+//     $usuarioController = new UsuarioController( $pdo, $request, $response );
     
-    $usuarioController->cadastrarUsuario();
-    return $response;
-});
+//     $usuarioController->cadastrarUsuario();
+//     return $response;
+// });
 
-$app->options('/aluno', function (Request $request, Response $response) {
+$app->options('/pessoa', function (Request $request, Response $response) {
     $response = $response
         ->withHeader('Access-Control-Allow-Origin', '*')
         ->withHeader('Access-Control-Allow-Methods', 'POST')
@@ -42,9 +42,7 @@ $app->options('/aluno', function (Request $request, Response $response) {
     return $response;
 });
 
-$app->post('/aluno', function (Request $request, Response $response) {
-   
-
+$app->post('/pessoa', function (Request $request, Response $response) {
     return $response;
 });
 

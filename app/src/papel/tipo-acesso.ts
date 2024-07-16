@@ -1,4 +1,5 @@
 export enum TipoAcesso {
     ADMINISTRADOR = 'ADMINISTRADOR',
-    ALUNO = 'ALUNO'
+    ALUNO = 'ALUNO',
+    RESPONSAVEL = 'RESPONSAVEL'
 }
