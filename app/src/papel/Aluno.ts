@@ -1,6 +1,5 @@
-import { Papel } from "../papel/Papel";
-import { TipoAcesso } from "../papel/tipo-acesso";
-import { Pessoa } from "../pessoa/Pessoa";
+import { Papel } from "./Papel";
+import { TipoAcesso } from "./tipo-acesso";
 
 export class Aluno extends Papel {
     // constructor(ativo: boolean, criadoEm: Date, criadoPor: Pessoa) {

@@ -8,6 +8,7 @@ export class PessoaController {
 
     iniciar() {
         this.pessoaView.iniciar( this.cadastrarPessoa.bind( this ) );
+        
     }
 
     cadastrarPessoa() {

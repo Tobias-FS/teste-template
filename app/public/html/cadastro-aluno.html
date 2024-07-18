@@ -19,7 +19,7 @@
           <form action="../../src/modules/cadastro-aluno.ts" method="POST" class="row g-3">
             <div class="col-md-12">
               <div class="form-floating">
-                <input type="text" class="form-control" id="nome" placeholder="Nome">
+                <input type="text" class="form-control" id="nome" placeholder="Nome" maxlength="100">
                 <label for="nome">Nome</label>
               </div>
             </div>
@@ -31,7 +31,7 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="text" class="form-control" id="cpf" placeholder="CPF">
+                <input type="text" class="form-control" id="cpf" placeholder="CPF"  maxlength="11">
                 <label for="cpf">CPF</label>
               </div>
             </div>
@@ -77,13 +77,13 @@
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="email" class="form-control" id="email" placeholder="Email">
+                <input type="email" class="form-control" id="email" placeholder="Email" maxlength="100">
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="col-md-6">
               <div class="form-floating">
-                <input type="password" class="form-control" id="senha" placeholder="Senha">
+                <input type="password" class="form-control" id="senha" placeholder="Senha" maxlength="128">
                 <label for="senha">Senha</label>
               </div>
             </div>
@@ -112,7 +112,7 @@
             <div id="ageFields" class="col-md-6" style="display: none;">
               <div class="form-floating">
                 <select class="form-select" id="maioridade" name="maioridade" aria-label="Maior de 18 anos" onchange="showFields()">
-                  <option value="true">Sim</option>
+                  <option value="true" selected>Sim</option>
                   <option value="false">Não</option>
                 </select>
                 <label for="maioridade">Maior de 18 anos</label>
@@ -124,7 +124,7 @@
               <div class="row g-3">
                 <div class="col-md-12">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="nomeResponsavel" placeholder="Nome">
+                    <input type="text" class="form-control" id="nomeResponsavel" placeholder="Nome" maxlength="100">
                     <label for="nomeResponsavel">Nome</label>
                   </div>
                 </div>
@@ -136,7 +136,7 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="text" class="form-control" id="cpfResponsavel" placeholder="CPF">
+                    <input type="text" class="form-control" id="cpfResponsavel" placeholder="CPF" maxlength="11">
                     <label for="cpfResponsavel">CPF</label>
                   </div>
                 </div>
@@ -178,13 +178,13 @@
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="email" class="form-control" id="emailResponsavel" placeholder="Email">
+                    <input type="email" class="form-control" id="emailResponsavel" placeholder="Email" maxlength="100">
                     <label for="emailResponsavel">Email</label>
                   </div>
                 </div>
                 <div class="col-md-6">
                   <div class="form-floating">
-                    <input type="password" class="form-control" id="senhaResponsavel" placeholder="Senha">
+                    <input type="password" class="form-control" id="senhaResponsavel" placeholder="Senha" maxlength="128">
                     <label for="senhaResponsavel">Senha</label>
                   </div>
                 </div>
